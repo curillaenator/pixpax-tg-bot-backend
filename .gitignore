@@ -1,4 +1,2 @@
-.yarn/cache
 node_modules
-build
 .env
