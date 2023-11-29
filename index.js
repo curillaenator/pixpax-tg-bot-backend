@@ -49,6 +49,8 @@ serverApp.post("/bot-data", async (req, res) => {
     // order
   } = req.body;
 
+  console.log(req.body);
+
   try {
     bot.answerWebAppQuery(queryId, {
       type: "article",
