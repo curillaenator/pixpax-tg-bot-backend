@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const https = require("https");
+const fs = require("fs");
 const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
 const cors = require("cors");
@@ -53,8 +55,8 @@ serverApp.post("/bot-data", async (req, res) => {
 
   try {
     bot.answerWebAppQuery(queryId, {
-      type: "article",
       id: queryId,
+      type: "article",
       title,
       input_message_content: {
         message_text: `Заказ ${orderId}. \n ${clientSupport}`,
@@ -68,7 +70,7 @@ serverApp.post("/bot-data", async (req, res) => {
       id: queryId,
       title: "Ошибка!",
       input_message_content: {
-        message_text: "Попробуйте позже",
+        message_text: `Попробуйте позже. Error: ${error.message}`,
       },
     });
 
@@ -76,5 +78,16 @@ serverApp.post("/bot-data", async (req, res) => {
   }
 });
 
-const PORT = 6006;
-serverApp.listen(PORT, () => console.log(`server is up on port ${PORT}`));
+const PORT = process.env.PORT || 6006;
+
+https
+  .createServer(
+    {
+      key: fs.readFileSync("key.pem"),
+      cert: fs.readFileSync("cert.pem"),
+    },
+    serverApp
+  )
+  .listen(PORT, () => console.log(`server is up on port ${PORT}`));
+
+// serverApp.listen(PORT, () => console.log(`server is up on port ${PORT}`));
