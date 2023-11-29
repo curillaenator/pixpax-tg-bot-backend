@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
 const cors = require("cors");
@@ -53,7 +55,7 @@ serverApp.post("/bot-data", async (req, res) => {
       id: queryId,
       title,
       input_message_content: {
-        message_text: `Заказ ${orderId}. ${clientSupport}`,
+        message_text: `Заказ ${orderId}. \n ${clientSupport}`,
       },
     });
 
