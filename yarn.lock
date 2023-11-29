@@ -48,59 +48,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/caseless@npm:*":
-  version: 0.12.5
-  resolution: "@types/caseless@npm:0.12.5"
-  checksum: f6a3628add76d27005495914c9c3873a93536957edaa5b69c63b46fe10b4649a6fecf16b676c1695f46aab851da47ec6047dcf3570fa8d9b6883492ff6d074e0
-  languageName: node
-  linkType: hard
-
-"@types/node-telegram-bot-api@npm:0.61.8":
-  version: 0.61.8
-  resolution: "@types/node-telegram-bot-api@npm:0.61.8"
-  dependencies:
-    "@types/node": "*"
-    "@types/request": "*"
-    eventemitter3: ">=3.0.0"
-  checksum: bcf90fcf40a5de52f30506a6e9bd165d8e7fb72736fcbb615bebeb82172544c51afe78ddc5eff2d3999d189e1b62f6b28bb95fb25c0c46ad313f6b423eaf1f8a
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:*":
-  version: 20.10.0
-  resolution: "@types/node@npm:20.10.0"
-  dependencies:
-    undici-types: ~5.26.4
-  checksum: face395140d6f2f1755b91fdd3b697cf56aeb9e2514529ce88d56e56f261ad65be7269d863520a9406d73c338699ea68b418e8677584de0c1efeed09539b6f97
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:20.8.3":
-  version: 20.8.3
-  resolution: "@types/node@npm:20.8.3"
-  checksum: bfb88b341faeb19f8fd37306a3bf433721b876c6491d10fcb0b13fd26601fa36ee45113dd82b1e1c23e3c957dff5b99f81a16493cefa03abe797e41a2487a4f7
-  languageName: node
-  linkType: hard
-
-"@types/request@npm:*":
-  version: 2.48.12
-  resolution: "@types/request@npm:2.48.12"
-  dependencies:
-    "@types/caseless": "*"
-    "@types/node": "*"
-    "@types/tough-cookie": "*"
-    form-data: ^2.5.0
-  checksum: 20dfad0a46b4249bf42f09c51fbd4d02ec6738c5152194b5c7c69bab80b00eae9cc71df4489ffa929d0968d453ef7d0823d1f98871efed563a4fdb57bf0a4c58
-  languageName: node
-  linkType: hard
-
-"@types/tough-cookie@npm:*":
-  version: 4.0.5
-  resolution: "@types/tough-cookie@npm:4.0.5"
-  checksum: f19409d0190b179331586365912920d192733112a195e870c7f18d20ac8adb7ad0b0ff69dad430dba8bc2be09593453a719cfea92dc3bda19748fd158fe1498d
-  languageName: node
-  linkType: hard
-
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -629,13 +576,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.3.1":
-  version: 16.3.1
-  resolution: "dotenv@npm:16.3.1"
-  checksum: 15d75e7279018f4bafd0ee9706593dd14455ddb71b3bcba9c52574460b7ccaf67d5cf8b2c08a5af1a9da6db36c956a04a1192b101ee102a3e0cf8817bbcf3dfd
-  languageName: node
-  linkType: hard
-
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -805,13 +745,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:>=3.0.0":
-  version: 5.0.1
-  resolution: "eventemitter3@npm:5.0.1"
-  checksum: 543d6c858ab699303c3c32e0f0f47fc64d360bf73c3daf0ac0b5079710e340d6fe9f15487f94e66c629f5f82cd1a8678d692f3dbb6f6fcd1190e1b97fcad36f8
-  languageName: node
-  linkType: hard
-
 "eventemitter3@npm:^3.0.0":
   version: 3.1.2
   resolution: "eventemitter3@npm:3.1.2"
@@ -954,17 +887,6 @@ __metadata:
   version: 0.6.1
   resolution: "forever-agent@npm:0.6.1"
   checksum: 766ae6e220f5fe23676bb4c6a99387cec5b7b62ceb99e10923376e27bfea72f3c3aeec2ba5f45f3f7ba65d6616965aa7c20b15002b6860833bb6e394dea546a8
-  languageName: node
-  linkType: hard
-
-"form-data@npm:^2.5.0":
-  version: 2.5.1
-  resolution: "form-data@npm:2.5.1"
-  dependencies:
-    asynckit: ^0.4.0
-    combined-stream: ^1.0.6
-    mime-types: ^2.1.12
-  checksum: 5134ada56cc246b293a1ac7678dba6830000603a3979cf83ff7b2f21f2e3725202237cfb89e32bcb38a1d35727efbd3c3a22e65b42321e8ade8eec01ce755d08
   languageName: node
   linkType: hard
 
@@ -2017,10 +1939,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pixpax-tg-bot-backend@workspace:."
   dependencies:
-    "@types/node": 20.8.3
-    "@types/node-telegram-bot-api": 0.61.8
     cors: 2.8.5
-    dotenv: 16.3.1
     express: 4.18.2
     node-telegram-bot-api: 0.63.0
     nodemon: 3.0.1
@@ -2686,13 +2605,6 @@ __metadata:
   version: 2.0.5
   resolution: "undefsafe@npm:2.0.5"
   checksum: f42ab3b5770fedd4ada175fc1b2eb775b78f609156f7c389106aafd231bfc210813ee49f54483d7191d7b76e483bc7f537b5d92d19ded27156baf57592eb02cc
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~5.26.4":
-  version: 5.26.5
-  resolution: "undici-types@npm:5.26.5"
-  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
   languageName: node
   linkType: hard
 
