@@ -1,17 +1,18 @@
 require("dotenv").config();
 
-const https = require("https");
-const fs = require("fs");
+// const https = require("https");
+// const fs = require("fs");
 const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
 const cors = require("cors");
 
 const bot = new TelegramBot(process.env.TG_TOKEN || "", { polling: true });
 
-const serverApp = express();
+const app = express();
 
-serverApp.use(express.json());
-serverApp.use(cors());
+app.use(express.json());
+app.use(express.static("public"));
+app.use(cors());
 
 bot.on("message", async (msg) => {
   const chatId = msg.chat.id;
@@ -42,7 +43,7 @@ bot.on("message", async (msg) => {
   }
 });
 
-serverApp.post("/bot-data", async (req, res) => {
+app.post("/bot-data", async (req, res) => {
   const {
     queryId,
     orderId,
@@ -78,7 +79,7 @@ serverApp.post("/bot-data", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 6006;
+const PORT = process.env.PORT || 80;
 
 // https
 //   .createServer(
@@ -90,4 +91,4 @@ const PORT = process.env.PORT || 6006;
 //   )
 //   .listen(PORT, () => console.log(`server is up on port ${PORT}`));
 
-serverApp.listen(PORT, () => console.log(`server is up on port ${PORT}`));
+app.listen(PORT, () => console.log(`server is up on port ${PORT}`));
