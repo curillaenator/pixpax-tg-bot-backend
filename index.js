@@ -79,7 +79,7 @@ app.post("/bot-data", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 443;
 
 https
   .createServer(
