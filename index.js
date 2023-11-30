@@ -80,14 +80,14 @@ serverApp.post("/bot-data", async (req, res) => {
 
 const PORT = process.env.PORT || 6006;
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync("key.pem"),
-      cert: fs.readFileSync("cert.pem"),
-    },
-    serverApp
-  )
-  .listen(PORT, () => console.log(`server is up on port ${PORT}`));
+// https
+//   .createServer(
+//     {
+//       key: fs.readFileSync("key.pem"),
+//       cert: fs.readFileSync("cert.pem"),
+//     },
+//     serverApp
+//   )
+//   .listen(PORT, () => console.log(`server is up on port ${PORT}`));
 
-// serverApp.listen(PORT, () => console.log(`server is up on port ${PORT}`));
+serverApp.listen(PORT, () => console.log(`server is up on port ${PORT}`));
