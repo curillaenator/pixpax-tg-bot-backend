@@ -20,15 +20,13 @@ bot.on("message", async (msg) => {
   if (!!msg.text) {
     switch (msg.text) {
       case "/start":
-        await bot.sendMessage(chatId, "Have fun with", {
+        await bot.sendMessage(chatId, "Начать работу с PixPax:", {
           reply_markup: {
             inline_keyboard: [
               [
                 {
-                  text: "Pixpax",
-                  web_app: {
-                    url: process.env.APP_URL || "",
-                  },
+                  text: "Start",
+                  web_app: { url: process.env.APP_URL || "" },
                 },
               ],
             ],
@@ -37,20 +35,14 @@ bot.on("message", async (msg) => {
         break;
 
       default:
-        bot.sendMessage(chatId, "/start is what you need!");
+        bot.sendMessage(chatId, "напишите/type:\n/start");
         break;
     }
   }
 });
 
 app.post("/bot-data", async (req, res) => {
-  const {
-    queryId,
-    orderId,
-    title,
-    clientSupport,
-    // order
-  } = req.body;
+  const { queryId, orderId, title, clientSupport } = req.body;
 
   try {
     bot.answerWebAppQuery(queryId, {
@@ -58,7 +50,7 @@ app.post("/bot-data", async (req, res) => {
       type: "article",
       title,
       input_message_content: {
-        message_text: `Заказ ${orderId}. \n ${clientSupport}`,
+        message_text: `Заказ ${orderId}.\n${clientSupport}`,
       },
     });
 
